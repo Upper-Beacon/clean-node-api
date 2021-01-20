@@ -212,4 +212,7 @@ modules.xml
 .history
 .ionide
 
+### @shelf/mongodb specific settings
+globalConfig.json
+
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,pycharm+all
