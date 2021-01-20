@@ -24,4 +24,11 @@ describe('Brypt Adapter', () => {
     const hash = await sut.encrypt('any_password');
     expect(hash).toBe('hashed_password');
   });
+
+  test('Should throw if bcrypt throws', async () => {
+    const sut = makeSut();
+    jest.spyOn(bcrypt, 'hash').mockReturnValueOnce(new Promise((resolve, reject) => reject(new Error())));
+    const hash = sut.encrypt('any_password');
+    await expect(hash).rejects.toThrow();
+  });
 });
