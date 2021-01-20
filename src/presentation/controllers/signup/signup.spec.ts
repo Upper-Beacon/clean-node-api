@@ -1,10 +1,8 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable no-unused-vars */
-import { AccountModel } from '../../domain/models/account';
-import { AddAccount, AddAccountModel } from '../../domain/usecases/add-account';
-import { InvalidParamError, MissingParamError, ServerError } from '../errors';
-import { EmailValidator } from '../protocols';
+import { InvalidParamError, MissingParamError, ServerError } from '../../errors';
 import { SignUpController } from './signup';
+import { AccountModel, AddAccount, AddAccountModel, EmailValidator } from './signup-protocols';
 
 interface SutTypes {
   sut: SignUpController;
@@ -105,9 +103,7 @@ describe('SignUp Controller', () => {
     };
     const httpResponse = sut.handle(httpRequest);
     expect(httpResponse.statusCode).toBe(400);
-    expect(httpResponse.body).toEqual(
-      new MissingParamError('passwordConfirmation')
-    );
+    expect(httpResponse.body).toEqual(new MissingParamError('passwordConfirmation'));
   });
 
   test('Should return 400 if passwordConfirmation fails', () => {
@@ -122,9 +118,7 @@ describe('SignUp Controller', () => {
     };
     const httpResponse = sut.handle(httpRequest);
     expect(httpResponse.statusCode).toBe(400);
-    expect(httpResponse.body).toEqual(
-      new InvalidParamError('passwordConfirmation')
-    );
+    expect(httpResponse.body).toEqual(new InvalidParamError('passwordConfirmation'));
   });
 
   test('Should return 400 if and invalid email is provided', () => {

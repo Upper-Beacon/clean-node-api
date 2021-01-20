@@ -1,12 +1,6 @@
-import { AddAccount } from '../../domain/usecases/add-account';
-import { InvalidParamError, MissingParamError } from '../errors';
-import { badRequest, serverError } from '../helpers/http-helper';
-import {
-  Controller,
-  EmailValidator,
-  HttpRequest,
-  HttpResponse,
-} from '../protocols';
+import { InvalidParamError, MissingParamError } from '../../errors';
+import { badRequest, serverError } from '../../helpers/http-helper';
+import { AddAccount, Controller, EmailValidator, HttpRequest, HttpResponse } from './signup-protocols';
 
 export class SignUpController implements Controller {
   private readonly emailValidator: EmailValidator;
@@ -20,12 +14,7 @@ export class SignUpController implements Controller {
   // eslint-disable-next-line consistent-return
   handle(httpRequest: HttpRequest): HttpResponse {
     try {
-      const requiredField = [
-        'name',
-        'email',
-        'password',
-        'passwordConfirmation',
-      ];
+      const requiredField = ['name', 'email', 'password', 'passwordConfirmation'];
 
       for (const field of requiredField) {
         if (!httpRequest.body[field]) {
