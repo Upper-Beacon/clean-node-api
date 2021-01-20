@@ -5,7 +5,7 @@ import { HttpRequest, HttpResponse } from '../protocols/http';
 export class SignUpController {
   // eslint-disable-next-line consistent-return
   handle(httpRequest: HttpRequest): HttpResponse {
-    const requiredField = ['name', 'email'];
+    const requiredField = ['name', 'email', 'password', 'passwordConfirmation'];
 
     for (const field of requiredField) {
       if (!httpRequest.body[field]) {
