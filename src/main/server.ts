@@ -1,5 +1,3 @@
-import express from 'express';
+import app from './config/app';
 
-const app = express();
-
-app.listen(3000, () => console.log('Server running at http://localhost:3000'));
+app.listen(3000, () => console.log('Server listening on http://localhost:3000'));
