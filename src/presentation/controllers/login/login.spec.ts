@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable max-classes-per-file */
-import { Authentication } from '../../../domain/usecases/authentication';
 import { InvalidParamError, MissingParamError } from '../../errors';
 import { badRequest, serverError, unauthorized } from '../../helpers/http-helper';
-import { EmailValidator, HttpRequest } from '../signup/signup-protocols';
 import { LoginController } from './login';
+import { Authentication, EmailValidator, HttpRequest } from './login-protocols';
 
 interface SutTypes {
   sut: LoginController;
