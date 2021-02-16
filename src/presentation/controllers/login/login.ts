@@ -10,7 +10,7 @@ export class LoginController implements Controller {
     this.emailValidator = emailValidator;
     this.authentication = authentication;
   }
-  // eslint-disable-next-line consistent-return
+
   async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
       const requiredFields = ['email', 'password'];
