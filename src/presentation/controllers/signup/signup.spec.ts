@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable max-classes-per-file */
-/* eslint-disable no-unused-vars */
 import { InvalidParamError, MissingParamError, ServerError } from '../../errors';
 import { badRequest, ok, serverError } from '../../helpers/http-helper';
 import { SignUpController } from './signup';

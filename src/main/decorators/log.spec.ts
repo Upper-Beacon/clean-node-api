@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable max-classes-per-file */
 import { LogErrorRepository } from '../../data/protocols/log-error-repository';
 import { AccountModel } from '../../domain/models/account';

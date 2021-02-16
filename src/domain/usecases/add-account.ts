@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { AccountModel } from '../models/account';
 
 export interface AddAccountModel {

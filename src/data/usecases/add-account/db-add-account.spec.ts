@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable max-classes-per-file */
-/* eslint-disable no-unused-vars */
 import { DbAddAccount } from './db-add-account';
 import { AccountModel, AddAccountModel, AddAccountRepository, Encrypter } from './db-add-account-protocols';
 
