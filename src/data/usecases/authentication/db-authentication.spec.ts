@@ -1,12 +1,14 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { AccountModel } from '../../../domain/models/account';
-import { AuthenticationModel } from '../../../domain/usecases/authentication';
-import { HashComparer } from '../../protocols/cryptography/hash-comparer';
-import { TokenGenerator } from '../../protocols/cryptography/token-generator';
-import { LoadAccountByEmailRepository } from '../../protocols/db/load-account-by-email-repository';
-import { UpdateAccessTokenRepository } from '../../protocols/db/update-access-token-repository';
 import { DbAuthentication } from './db-authentication';
+import {
+  AccountModel,
+  AuthenticationModel,
+  HashComparer,
+  LoadAccountByEmailRepository,
+  TokenGenerator,
+  UpdateAccessTokenRepository,
+} from './db-authentication-protocols';
 
 interface SutTypes {
   sut: DbAuthentication;
