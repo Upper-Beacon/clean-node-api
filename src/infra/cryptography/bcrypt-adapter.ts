@@ -16,7 +16,7 @@ export class BcryptAdapter implements Hasher, HashComparer {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async compare(value: string, hash: string): Promise<boolean> {
-    await bcrypt.compare(value, hash);
-    return new Promise(resolve => resolve(true));
+    const isValid = await bcrypt.compare(value, hash);
+    return isValid;
   }
 }
