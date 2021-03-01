@@ -15,20 +15,20 @@ describe('Brypt Adapter', () => {
   test('Should call bcrypt with correct value', async () => {
     const sut = makeSut();
     const hashSpy = jest.spyOn(bcrypt, 'hash');
-    await sut.encrypt('any_password');
+    await sut.hash('any_password');
     expect(hashSpy).toHaveBeenCalledWith('any_password', salt);
   });
 
   test('Should return a hash on success', async () => {
     const sut = makeSut();
-    const hash = await sut.encrypt('any_password');
+    const hash = await sut.hash('any_password');
     expect(hash).toBe('hashed_password');
   });
 
   test('Should throw if bcrypt throws', async () => {
     const sut = makeSut();
     jest.spyOn(bcrypt, 'hash').mockReturnValueOnce(new Promise((resolve, reject) => reject(new Error())));
-    const hash = sut.encrypt('any_password');
+    const hash = sut.hash('any_password');
     await expect(hash).rejects.toThrow();
   });
 });
