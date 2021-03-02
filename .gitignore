@@ -215,4 +215,7 @@ modules.xml
 ### @shelf/mongodb specific settings
 globalConfig.json
 
+### mongoDB volume
+.data/*
+
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,pycharm+all
